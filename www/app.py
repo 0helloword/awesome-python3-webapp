@@ -16,7 +16,7 @@ def index(request):#首页返回显示AWesome
 def init(loop):
     app = web.Application(loop=loop)
     app.router.add_route('GET', '/', index)#增加路由
-    srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9000)
+    srv = yield from loop.create_server(app.make_handler(), '127.0.0.1',9000)
     logging.info('server started at http://127.0.0.1:9000...')
     return srv
 
